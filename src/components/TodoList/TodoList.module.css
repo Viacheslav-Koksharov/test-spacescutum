@@ -4,7 +4,7 @@
 
 .list {
   margin: 0;
-  min-height: 250px;
+  min-height: 270px;
 }
 
 .point {
@@ -18,33 +18,33 @@
   margin-bottom: 10px;
 }
 
-.checkbox {
-  margin: 0 10px 0 0;
-  width: 14px;
-  height: 14px;
-  border: solid 1px rgba(40, 42, 43, 0.27);
-  border-radius: 5px;
-}
-
 .text {
   position: relative;
   flex-grow: 1;
-  color: red;
+  color: rgb(221, 221, 176);
   font-size: 14px;
 }
 
 .checked {
-  color: green;
+  color: #ce93d8;
 }
-
-/* .checked::after {
-  content: '';
-  background-color: green;
-} */
 
 .pagination {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 30px 0 0 0;
+}
+
+.button {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+.button:hover {
+  scale: 1.1;
 }

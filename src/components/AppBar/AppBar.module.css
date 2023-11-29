@@ -1,6 +1,7 @@
 .wrapper {
   display: flex;
   justify-content: space-between;
+  padding: 0 15px;
 }
 
 .section {
@@ -11,4 +12,5 @@
 .title {
   margin: 0;
   font-size: 16px;
+  color:beige
 }

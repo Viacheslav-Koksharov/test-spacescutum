@@ -2,10 +2,14 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Stack from '@mui/material/Stack';
 import Pagination from '@mui/material/Pagination';
+import { purple } from '@mui/material/colors';
+import Checkbox from '@mui/material/Checkbox';
 import { usePagination } from 'custom-hooks-ts-lib';
+import { FaTrashAlt } from 'react-icons/fa';
 import { deleteTodo, toggle } from '../../redux/operations';
 import { selectVisibleTasks } from '../../redux/selectors';
 import Form from '../Form';
+import Button from '../Button/Button';
 import s from './TodoList.module.css';
 
 const TodoList = () => {
@@ -37,16 +41,23 @@ const TodoList = () => {
       <ul className={s.list}>
         {pagination.getItemsToPage().map(({ id, title, completed, userId }) => (
           <li className={s.point} key={id}>
-            <input
-              className={s.checkbox}
+            <Checkbox
               type="checkbox"
               onChange={() => handleToggle(id, title, completed, userId)}
               checked={completed}
+              sx={{
+                color: purple[200],
+                '&.Mui-checked': {
+                  color: purple[200],
+                },
+              }}
             />
             <p className={!completed ? s.text : `${s.text} ${s.checked}`}>
               {title}
             </p>
-            <button onClick={() => handleDelete(id)}>X</button>
+            <Button className={s.button} onClick={() => handleDelete(id)}>
+              <FaTrashAlt size={18} fill={'#ce93d8'} />
+            </Button>
           </li>
         ))}
       </ul>
@@ -57,7 +68,7 @@ const TodoList = () => {
             count={count}
             size="large"
             page={page}
-            color="primary"
+            color="secondary"
             variant="outlined"
             shape="rounded"
             onChange={handlePageChange}

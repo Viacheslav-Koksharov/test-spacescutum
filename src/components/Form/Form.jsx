@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { CgAddR } from 'react-icons/cg';
 import { addTodo } from '../../redux/operations';
+import Button from '../Button/Button';
 import s from './Form.module.css';
 
 const Form = () => {
@@ -33,7 +35,10 @@ const Form = () => {
         placeholder="Add New Task"
         onChange={handleChangeForm}
       />
-      <button className={s.button} type="submit" aria-label="Add task"></button>
+
+      <Button className={s.button} type="submit" aria-label="Add task">
+        <CgAddR size={20} fill={'rgb(174, 115, 241)'} />
+      </Button>
     </form>
   );
 };

@@ -1,5 +1,6 @@
 body {
   font-family: 'Oswald', sans-serif;
+  background-color: #121212;
 }
 
 img {
@@ -14,6 +15,10 @@ ul {
   list-style-type: none;
 }
 
+h1 {
+  text-align: center;
+  color: beige;
+}
 h1,
 p {
   margin: 0;
