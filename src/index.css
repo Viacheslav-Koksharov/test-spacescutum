@@ -1,3 +1,10 @@
+:root {
+  --light-color: rgb(245, 245, 220);
+  --accent-color: rgb(206, 147, 216);
+  --border-color: rgba(206, 147, 216, 0.5);
+  --button-bgc: rgba(206, 147, 216, 0.12);
+}
+
 body {
   font-family: 'Oswald', sans-serif;
   background-color: #121212;
@@ -17,7 +24,7 @@ ul {
 
 h1 {
   text-align: center;
-  color: beige;
+  color: var(--light-color);
 }
 h1,
 p {

@@ -21,12 +21,12 @@
 .text {
   position: relative;
   flex-grow: 1;
-  color: rgb(221, 221, 176);
+  color: var(--light-color);
   font-size: 14px;
 }
 
 .checked {
-  color: #ce93d8;
+  color: var(--accent-color);
 }
 
 .pagination {

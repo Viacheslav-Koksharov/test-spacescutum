@@ -14,6 +14,10 @@ export const delTodo = (id) => {
   return axios.delete(`/todos/${id}`);
 };
 
+export const udateTodo = (id, updatedData) => {
+  return axios.put(`/todos/${id}`, updatedData);
+};
+
 export const toggle = (id, updatedData) => {
   return axios.put(`/todos/${id}`, updatedData);
 };

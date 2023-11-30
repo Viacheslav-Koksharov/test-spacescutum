@@ -1,4 +1,27 @@
-.text {
+.container {
+  display: flex;
+}
+.active {
+  margin-right: 10px;
+  padding: 1px 5px;
+  text-align: center;
+  color: var(--light-color);
+  border: 1px solid rgba(206, 147, 216, 0.5);
+  background-color: rgba(206, 147, 216, 0.12);
+}
+.completed {
+  padding: 1px 5px;
+  text-align: center;
+  color: var(--accent-color);
+  border: 1px solid rgba(206, 147, 216, 0.5);
+  background-color: rgba(206, 147, 216, 0.12);
+}
+.textActive {
   margin: 0;
-  color: beige;
+  color: var(--light-color);
+}
+
+.textCompleted {
+  margin: 0;
+  color:  var(--accent-color);;
 }

@@ -5,6 +5,7 @@ import Pagination from '@mui/material/Pagination';
 import { purple } from '@mui/material/colors';
 import Checkbox from '@mui/material/Checkbox';
 import { usePagination } from 'custom-hooks-ts-lib';
+import { FaEdit } from 'react-icons/fa';
 import { FaTrashAlt } from 'react-icons/fa';
 import { deleteTodo, toggle } from '../../redux/operations';
 import { selectVisibleTasks } from '../../redux/selectors';
@@ -14,13 +15,13 @@ import s from './TodoList.module.css';
 
 const TodoList = () => {
   const todos = useSelector(selectVisibleTasks);
+  const [selectedTodo, setSelectedTodo] = useState(null);
+
   const [page, setPage] = useState(1);
   const PER_PAGE = 5;
   const count = Math.ceil(todos.length / PER_PAGE);
   const pagination = usePagination(todos, PER_PAGE);
   const dispatch = useDispatch();
-
-  console.log(todos);
 
   useEffect(() => {
     pagination.jumpToPage(page);
@@ -32,12 +33,16 @@ const TodoList = () => {
 
   const handleDelete = id => dispatch(deleteTodo(id));
 
+  const handleUpdateTodo = (id, title, completed, userId) => {
+    setSelectedTodo({ id, title, completed, userId });
+  };
+
   const handleToggle = (id, title, completed, userId) =>
     dispatch(toggle({ id, title, completed, userId }));
 
   return (
     <div className={s.todo}>
-      <Form />
+      <Form selectedTodo={selectedTodo} setSelectedTodo={setSelectedTodo} />
       <ul className={s.list}>
         {pagination.getItemsToPage().map(({ id, title, completed, userId }) => (
           <li className={s.point} key={id}>
@@ -55,6 +60,12 @@ const TodoList = () => {
             <p className={!completed ? s.text : `${s.text} ${s.checked}`}>
               {title}
             </p>
+            <Button
+              className={s.button}
+              onClick={() => handleUpdateTodo(id, title, completed, userId)}
+            >
+              <FaEdit size={18} fill={'beige'} />
+            </Button>
             <Button className={s.button} onClick={() => handleDelete(id)}>
               <FaTrashAlt size={18} fill={'#ce93d8'} />
             </Button>

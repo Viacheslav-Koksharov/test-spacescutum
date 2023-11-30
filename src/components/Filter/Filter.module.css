@@ -11,17 +11,18 @@
 .title {
   margin: 0;
   font-size: 16px;
-  color: beige;
+  color: var(--light-color);
 }
 .button {
   width: 100%;
-  margin-right: 10px;
-  color: beige;
-  border: 1px solid rgba(206, 147, 216, 0.5);
-  background-color: rgba(206, 147, 216, 0.12);
+  color: var(--light-color);
+  border: 1px solid var(--border-color);
+  background-color: var(--button-bgc);
   cursor: pointer;
 }
-
+.button:not(:last-child) {
+  margin: 0 10px 0 0;
+}
 .button:hover {
   scale: 1.05;
 }

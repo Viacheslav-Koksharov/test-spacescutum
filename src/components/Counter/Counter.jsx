@@ -6,10 +6,14 @@ const Counter = () => {
   const { active, completed } = useSelector(selectTaskCount);
 
   return (
-    <div>
-      <p className={s.text}>Active: {active}</p>
-      <p className={s.text}>Completed: {completed}</p>
-    </div>
+    <ul className={s.container}>
+      <li className={s.active}>
+        <p className={s.textActive}> Active: {active}</p>
+      </li>
+      <li className={s.completed}>
+        <p className={s.textCompleted}> Completed: {completed}</p>
+      </li>
+    </ul>
   );
 };
 

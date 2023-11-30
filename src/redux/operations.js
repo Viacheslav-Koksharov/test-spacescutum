@@ -19,6 +19,18 @@ export const deleteTodo = createAsyncThunk('todos/deleteTodo', async id => {
   return id;
 });
 
+export const update = createAsyncThunk(
+  'todos/update',
+  async ({ id, title, completed, userId }) => {
+    const { data } = await api.toggle(id, {
+      completed,
+      title,
+      userId,
+    });
+    return data;
+  },
+);
+
 export const toggle = createAsyncThunk(
   'todos/toggleCompleted',
   async ({ id, title, completed, userId }) => {

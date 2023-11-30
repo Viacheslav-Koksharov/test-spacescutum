@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchTodos, addTodo, deleteTodo, toggle } from "./operations.js";
+import { fetchTodos, addTodo, deleteTodo, update, toggle } from "./operations.js";
 
 const handlePending = state => {
   state.isLoading = true;
@@ -31,7 +31,7 @@ const tasksSlice = createSlice({
       .addCase(addTodo.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.error = null;
-        state.items = [payload, ...state.items];
+        state.items = [...state.items, payload];
       })
       .addCase(addTodo.rejected, handleRejected)
       .addCase(deleteTodo.pending, handlePending)
@@ -42,6 +42,15 @@ const tasksSlice = createSlice({
         state.items.splice(index, 1);
       })
       .addCase(deleteTodo.rejected, handleRejected)
+      .addCase(update.pending, handlePending)
+      .addCase(update.fulfilled, (state, { payload }) => {
+        const index = state.items.findIndex(task => task.id === payload.id);
+        if (index !== -1) {
+          state.items[index].title = payload.title;
+          state.items[index].completed = false;
+        }
+      })
+      .addCase(update.rejected, handleRejected)
       .addCase(toggle.pending, handlePending)
       .addCase(toggle.fulfilled, (state, { payload }) => {
         state.isLoading = false;

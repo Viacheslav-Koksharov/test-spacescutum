@@ -10,10 +10,10 @@
   padding: 0 4px;
   outline: none;
   border: none;
-  border-bottom: 1px solid beige;
+  border-bottom: 1px solid var(--light-color);
   background-color: transparent;
   margin-right: 12px;
-  color: beige;
+  color: var(--light-color);
   box-shadow: none;
   border-radius: 0;
 }
@@ -23,7 +23,7 @@
   height: 32px;
   flex-shrink: 0;
   border: none;
-  color: beige;
+  color: var(--light-color);
   background: transparent;
   padding: 0;
   cursor: pointer;
