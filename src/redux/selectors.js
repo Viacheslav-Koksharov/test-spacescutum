@@ -12,7 +12,6 @@ export const selectStatusFilter = state => state.filters.status;
 export const selectVisibleTasks = createSelector(
   [selectTasks, selectStatusFilter],
   (todos, statusFilter) => {
-
     switch (statusFilter) {
       case statusFilters.active:
         return todos.filter(todo => !todo.completed);

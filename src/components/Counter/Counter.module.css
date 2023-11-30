@@ -1,21 +1,24 @@
 .container {
   display: flex;
+  gap: 10px;
 }
+
 .active {
-  margin-right: 10px;
   padding: 1px 5px;
   text-align: center;
   color: var(--light-color);
-  border: 1px solid rgba(206, 147, 216, 0.5);
-  background-color: rgba(206, 147, 216, 0.12);
+  border: 1px solid var(--border-color);
+  background-color: var(--button-bgc);
 }
+
 .completed {
   padding: 1px 5px;
   text-align: center;
   color: var(--accent-color);
-  border: 1px solid rgba(206, 147, 216, 0.5);
-  background-color: rgba(206, 147, 216, 0.12);
+  border: 1px solid var(--border-color);
+  background-color: var(--button-bgc);
 }
+
 .textActive {
   margin: 0;
   color: var(--light-color);
@@ -23,5 +26,5 @@
 
 .textCompleted {
   margin: 0;
-  color:  var(--accent-color);;
+  color: var(--accent-color);
 }

@@ -1,33 +1,32 @@
 .form {
+  display: flex;
   height: 40px;
   font-size: 14px;
-  display: flex;
 }
 
 .input {
-  border-right: none;
-  width: 100%;
+  margin: 0 12px 0 0;
   padding: 0 4px;
+  width: 100%;
+  color: var(--light-color);
   outline: none;
   border: none;
   border-bottom: 1px solid var(--light-color);
   background-color: transparent;
-  margin-right: 12px;
-  color: var(--light-color);
-  box-shadow: none;
   border-radius: 0;
 }
 
 .button {
+  flex-shrink: 0;
+  padding: 0;
   width: 32px;
   height: 32px;
-  flex-shrink: 0;
-  border: none;
   color: var(--light-color);
+  border: none;
   background: transparent;
-  padding: 0;
   cursor: pointer;
 }
+
 .button:hover {
   scale: 1.1;
 }

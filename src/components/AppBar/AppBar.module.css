@@ -1,12 +1,33 @@
 .wrapper {
-  display: flex;
   justify-content: space-between;
   padding: 10px 15px;
 }
 
+@media screen and (min-width: 480px) {
+  .wrapper {
+    display: flex;
+  }
+}
+
 .section {
-  display: grid;
-  gap: 4px;
+  gap: 10px;
+}
+
+@media screen and (max-width: 480px) {
+  .section {
+    display: flex;
+    align-items: center;
+  }
+
+  .section:not(:last-child) {
+    margin: 0 0 20px 0;
+  }
+}
+
+@media screen and (min-width: 481px) {
+  .section {
+    display: grid;
+  }
 }
 
 .title {

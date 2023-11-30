@@ -1,28 +1,19 @@
 .wrapper {
   display: flex;
-  justify-content: space-between;
+  gap: 10px;
 }
 
-.section {
-  display: grid;
-  gap: 4px;
-}
-
-.title {
-  margin: 0;
-  font-size: 16px;
-  color: var(--light-color);
-}
 .button {
-  width: 100%;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   color: var(--light-color);
   border: 1px solid var(--border-color);
   background-color: var(--button-bgc);
   cursor: pointer;
 }
-.button:not(:last-child) {
-  margin: 0 10px 0 0;
-}
+
 .button:hover {
   scale: 1.05;
 }

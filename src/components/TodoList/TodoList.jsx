@@ -16,7 +16,6 @@ import s from './TodoList.module.css';
 const TodoList = () => {
   const todos = useSelector(selectVisibleTasks);
   const [selectedTodo, setSelectedTodo] = useState(null);
-
   const [page, setPage] = useState(1);
   const PER_PAGE = 5;
   const count = Math.ceil(todos.length / PER_PAGE);
@@ -80,6 +79,7 @@ const TodoList = () => {
             size="large"
             page={page}
             color="secondary"
+            text="primary"
             variant="outlined"
             shape="rounded"
             onChange={handlePageChange}

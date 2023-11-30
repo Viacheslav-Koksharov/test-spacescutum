@@ -43,16 +43,15 @@ const Form = ({ selectedTodo, setSelectedTodo }) => {
     <form className={s.form} onSubmit={handleSubmitForm}>
       <input
         className={s.input}
-        type="text"
-        name="title"
+        type='text'
+        name='title'
         value={title}
-        autoComplete="off"
-        placeholder="Add New Task"
+        autoComplete='off'
+        placeholder='Add New Task'
         onChange={handleChangeForm}
       />
-
-      <Button className={s.button} type="submit" aria-label="Add task">
-        <CgAddR size={20} fill={'rgb(174, 115, 241)'} />
+      <Button className={s.button} type='submit' aria-label='Add task'>
+        <CgAddR size={20} fill={'var(--light-color)'} />
       </Button>
     </form>
   );

@@ -2,6 +2,12 @@
   padding: 14px 29px;
 }
 
+@media screen and (max-width: 480px) {
+  .todo {
+    padding: 14px 10px;
+  }
+}
+
 .list {
   margin: 0;
   min-height: 270px;
@@ -15,7 +21,7 @@
 }
 
 .point:not(:last-child) {
-  margin-bottom: 10px;
+  margin: 0 0 10px 0;
 }
 
 .text {
@@ -37,14 +43,15 @@
 }
 
 .button {
+  padding: 0;
   width: 32px;
   height: 32px;
   flex-shrink: 0;
   border: none;
   background: transparent;
-  padding: 0;
   cursor: pointer;
 }
+
 .button:hover {
   scale: 1.1;
 }
